@@ -2,25 +2,27 @@
 <html lang="sq">
 <head>
     <meta charset="UTF-8">
-    <title>Cloud Drive Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Drive Docs</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        object {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <script>
-        // Ndryshoni linkun më poshtë me adresën aktive që morët nga Discord
-        const proxyUrl = "https://news.reasonpress.net/";
 
-        fetch(proxyUrl)
-            .then(response => response.text())
-            .then(html => {
-                // Ky kod merr faqen e proxy-t dhe e injekton direkt në GitHub-in tënd
-                document.open();
-                document.write(html);
-                document.close();
-            })
-            .catch(err => {
-                // Nëse fetch bllokohet nga CORS, përdorim këtë plan rezervë automatik
-                window.location.replace(proxyUrl);
-            });
-    </script>
+    <!-- Ky tag e detyron proxy-n të qëndrojë brenda faqes pa ndryshuar URL-në lart -->
+    <object data="https://news.reasonpress.net/" type="text/html"></object>
+
 </body>
 </html>
