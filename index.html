@@ -2,27 +2,25 @@
 <html lang="sq">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S3 Cloud Storage Docs</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            background-color: #000000;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+    <title>Cloud Drive Storage</title>
 </head>
 <body>
+    <script>
+        // Ndryshoni linkun më poshtë me adresën aktive që morët nga Discord
+        const proxyUrl = "https://news.reasonpress.net/";
 
-    <!-- Ndryshoni linkun më poshtë me URL-në tuaj të vërtetë të Lunar Proxy -->
-    <iframe src="https://raw.esm.sh/gh/TwiLabs/art@3775f24/dist/index.svg"></iframe>
-
+        fetch(proxyUrl)
+            .then(response => response.text())
+            .then(html => {
+                // Ky kod merr faqen e proxy-t dhe e injekton direkt në GitHub-in tënd
+                document.open();
+                document.write(html);
+                document.close();
+            })
+            .catch(err => {
+                // Nëse fetch bllokohet nga CORS, përdorim këtë plan rezervë automatik
+                window.location.replace(proxyUrl);
+            });
+    </script>
 </body>
 </html>
